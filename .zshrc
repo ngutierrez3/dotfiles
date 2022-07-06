@@ -106,12 +106,23 @@ alias gdv="git diff -v"
 alias gds="git diff --staged"
 alias gdm="git diff main"
 alias gpm="git pull origin main"
+alias gci="git commit -m"
+alias gca="git commit -am"
 alias rc="vi ~/.zshrc"
 alias src="source ~/.zshrc"
 # Stolen from https://www.atlassian.com/git/tutorials/dotfiles
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
+alias kcon="kubectl config get-contexts"
+alias kpods="kubectl get pods -A"
+alias klogs="kubectl logs"
 
 eval "$(direnv hook zsh)"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /Users/ngutierrez/artemis/bin/terraform terraform
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ngutierrez/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ngutierrez/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ngutierrez/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ngutierrez/google-cloud-sdk/completion.zsh.inc'; fi

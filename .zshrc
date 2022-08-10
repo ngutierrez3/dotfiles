@@ -115,9 +115,13 @@ alias src="source ~/.zshrc"
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 alias kcon="kubectl config get-contexts"
 alias kpods="kubectl get pods -A"
+alias kpod="kpod"
 alias klogs="kubectl logs"
+alias klog="klogs"
 alias knodes="kubectl get nodes"
+alias knode="knodes"
 alias krev="kn revision list"
+alias ca="cd ~/artemis"
 
 eval "$(direnv hook zsh)"
 

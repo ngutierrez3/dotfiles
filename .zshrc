@@ -115,15 +115,19 @@ alias src="source ~/.zshrc"
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 alias kcon="kubectl config get-contexts"
 alias kpods="kubectl get pods -A"
-alias kpod="kpod"
+alias kpod="kpods"
 alias klogs="kubectl logs"
 alias klog="klogs"
 alias knodes="kubectl get nodes"
 alias knode="knodes"
 alias krev="kn revision list"
 alias ca="cd ~/artemis"
-
+alias prom="cd ~/prometheus-2.38.0.darwin-arm64 && ./prometheus --config.file=prometheus.yml"
 eval "$(direnv hook zsh)"
+
+function checkport() {
+    lsof -i "tcp:$1"
+}
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /Users/ngutierrez/artemis/bin/terraform terraform
